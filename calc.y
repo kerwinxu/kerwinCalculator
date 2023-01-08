@@ -4,14 +4,14 @@
     #include <math.h>
     #include <string.h>
     #define PI 3.14159265
-    int yylex(void);
-    void yyerror(char *);
+    int calclex(void);
+    void calcerror(char *);
 
     /*** 如下的是可以设置成输入字符串的。  **/
-    typedef struct yy_buffer_state * YY_BUFFER_STATE;
-    extern int yyparse();
-    extern YY_BUFFER_STATE yy_scan_string(char * str);
-    extern void yy_delete_buffer(YY_BUFFER_STATE buffer);
+    typedef struct calc_buffer_state * YY_BUFFER_STATE;
+    extern int calcparse();
+    extern YY_BUFFER_STATE calc_scan_string(char * str);
+    extern void calc_delete_buffer(YY_BUFFER_STATE buffer);
 
     double result; // 输出的结果。
 
@@ -74,7 +74,7 @@ fun:
         {
             $$=tan($3* PI / 180);
         }else{
-            yyerror($1);
+            calcerror($1);
 
         }
     } // end
@@ -83,8 +83,8 @@ fun:
 
 %%
 
-void yyerror(char * s){
-    printf("yyerror : %s\n", s);
+void calcerror(char * s){
+    printf("calcerror : %s\n", s);
 }
 
 double get_result(){
@@ -101,10 +101,10 @@ double get_result(){
 double parse_expr(char * expr){
     // 这个是供外部调用的。
     printf("expr: %s\n", expr);
-    YY_BUFFER_STATE buf = yy_scan_string(expr);
-    yyparse();
+    YY_BUFFER_STATE buf = calc_scan_string(expr);
+    calcparse();
     double result = get_result();
-    yy_delete_buffer(buf);
+    calc_delete_buffer(buf);
     return result;
 
 }
