@@ -67,7 +67,7 @@
 
 
 /* First part of user prologue.  */
-#line 1 "calc.y"
+#line 1 "../kerwinCalculator/calc.y"
 
     #include <stdio.h>
     #include <stdlib.h>
@@ -86,7 +86,7 @@
     double result; // 输出的结果。
 
 
-#line 90 "calc.tab.c"
+#line 90 "../kerwinCalculator/calc_yacc.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -109,7 +109,7 @@
 #  endif
 # endif
 
-#include "calc.tab.h"
+#include "calc_yacc.h"
 /* Symbol kind.  */
 enum yysymbol_kind_t
 {
@@ -1094,76 +1094,76 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* line: line expr END  */
-#line 42 "calc.y"
+#line 42 "../kerwinCalculator/calc.y"
                   {
         //printf("%2f\n", $2);
         result = (yyvsp[-1].floatval);
         }
-#line 1103 "calc.tab.c"
+#line 1103 "../kerwinCalculator/calc_yacc.c"
     break;
 
   case 4: /* expr: expr OP_ADD term  */
-#line 49 "calc.y"
+#line 49 "../kerwinCalculator/calc.y"
                      {(yyval.floatval) = (yyvsp[-2].floatval) + (yyvsp[0].floatval);}
-#line 1109 "calc.tab.c"
+#line 1109 "../kerwinCalculator/calc_yacc.c"
     break;
 
   case 5: /* expr: expr OP_SUB term  */
-#line 50 "calc.y"
+#line 50 "../kerwinCalculator/calc.y"
                        {(yyval.floatval) = (yyvsp[-2].floatval) - (yyvsp[0].floatval);}
-#line 1115 "calc.tab.c"
+#line 1115 "../kerwinCalculator/calc_yacc.c"
     break;
 
   case 6: /* expr: term  */
-#line 51 "calc.y"
+#line 51 "../kerwinCalculator/calc.y"
            {(yyval.floatval)=(yyvsp[0].floatval);}
-#line 1121 "calc.tab.c"
+#line 1121 "../kerwinCalculator/calc_yacc.c"
     break;
 
   case 7: /* term: term OP_MUL factor  */
-#line 54 "calc.y"
+#line 54 "../kerwinCalculator/calc.y"
                        {(yyval.floatval) = (yyvsp[-2].floatval) * (yyvsp[0].floatval);}
-#line 1127 "calc.tab.c"
+#line 1127 "../kerwinCalculator/calc_yacc.c"
     break;
 
   case 8: /* term: term OP_DIV factor  */
-#line 55 "calc.y"
+#line 55 "../kerwinCalculator/calc.y"
                          {(yyval.floatval) = (yyvsp[-2].floatval) / (yyvsp[0].floatval);}
-#line 1133 "calc.tab.c"
+#line 1133 "../kerwinCalculator/calc_yacc.c"
     break;
 
   case 9: /* term: term OP_POW factor  */
-#line 56 "calc.y"
+#line 56 "../kerwinCalculator/calc.y"
                          {(yyval.floatval) = pow((yyvsp[-2].floatval),(yyvsp[0].floatval));}
-#line 1139 "calc.tab.c"
+#line 1139 "../kerwinCalculator/calc_yacc.c"
     break;
 
   case 10: /* term: factor  */
-#line 57 "calc.y"
+#line 57 "../kerwinCalculator/calc.y"
              {(yyval.floatval)=(yyvsp[0].floatval);}
-#line 1145 "calc.tab.c"
+#line 1145 "../kerwinCalculator/calc_yacc.c"
     break;
 
   case 11: /* factor: NUM  */
-#line 60 "calc.y"
+#line 60 "../kerwinCalculator/calc.y"
         {(yyval.floatval)=(yyvsp[0].floatval);}
-#line 1151 "calc.tab.c"
+#line 1151 "../kerwinCalculator/calc_yacc.c"
     break;
 
   case 12: /* factor: LEFT_BRACKET expr RIGHT_BRACKET  */
-#line 61 "calc.y"
+#line 61 "../kerwinCalculator/calc.y"
                                       {(yyval.floatval)=(yyvsp[-1].floatval);}
-#line 1157 "calc.tab.c"
+#line 1157 "../kerwinCalculator/calc_yacc.c"
     break;
 
   case 13: /* factor: OP_SUB NUM  */
-#line 62 "calc.y"
+#line 62 "../kerwinCalculator/calc.y"
                            {(yyval.floatval)=-(yyvsp[0].floatval);}
-#line 1163 "calc.tab.c"
+#line 1163 "../kerwinCalculator/calc_yacc.c"
     break;
 
   case 15: /* fun: OP_FUN LEFT_BRACKET expr RIGHT_BRACKET  */
-#line 65 "calc.y"
+#line 65 "../kerwinCalculator/calc.y"
                                            {
         if (strcmp("sin", (yyvsp[-3].id)) == 0)
         {
@@ -1180,11 +1180,11 @@ yyreduce:
 
         }
     }
-#line 1184 "calc.tab.c"
+#line 1184 "../kerwinCalculator/calc_yacc.c"
     break;
 
 
-#line 1188 "calc.tab.c"
+#line 1188 "../kerwinCalculator/calc_yacc.c"
 
       default: break;
     }
@@ -1377,7 +1377,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 84 "calc.y"
+#line 84 "../kerwinCalculator/calc.y"
 
 
 void yyerror(char * s){

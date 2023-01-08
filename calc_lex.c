@@ -1,5 +1,6 @@
+#line 1 "../kerwinCalculator/calc_lex.c"
 
-#line 2 "lex.yy.c"
+#line 3 "../kerwinCalculator/calc_lex.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -351,8 +352,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 14
-#define YY_END_OF_BUFFER 15
+#define YY_NUM_RULES 13
+#define YY_END_OF_BUFFER 14
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -360,11 +361,10 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[22] =
+static const flex_int16_t yy_accept[21] =
     {   0,
-        0,    0,   15,   13,   12,   10,    7,    8,    5,    2,
-        3,    6,    1,    9,   11,    4,    1,    1,    9,    1,
-        0
+        0,    0,   14,   12,   11,   10,    7,    8,    5,    2,
+        3,    6,    1,    9,    4,    1,    1,    9,    1,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -399,40 +399,38 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[14] =
+static const YY_CHAR yy_meta[13] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1
+        1,    1
     } ;
 
-static const flex_int16_t yy_base[22] =
+static const flex_int16_t yy_base[21] =
     {   0,
-        0,    0,   21,   22,   22,   22,   22,   22,   14,   22,
-       22,   22,    5,    7,   22,   22,    7,    0,    5,    4,
-       22
+        0,    0,   20,   21,   21,   21,   21,   21,   13,   21,
+       21,   21,    4,    6,   21,    6,    0,    4,    3,   21
     } ;
 
-static const flex_int16_t yy_def[22] =
+static const flex_int16_t yy_def[21] =
     {   0,
-       21,    1,   21,   21,   21,   21,   21,   21,   21,   21,
-       21,   21,   21,   21,   21,   21,   21,   13,   21,   21,
-        0
+       20,    1,   20,   20,   20,   20,   20,   20,   20,   20,
+       20,   20,   20,   20,   20,   20,   13,   20,   20,    0
     } ;
 
-static const flex_int16_t yy_nxt[36] =
+static const flex_int16_t yy_nxt[34] =
     {   0,
         4,    5,    6,    7,    8,    9,   10,   11,    4,   12,
-       13,   14,   15,   17,   20,   18,   19,   20,   19,   16,
-       21,    3,   21,   21,   21,   21,   21,   21,   21,   21,
-       21,   21,   21,   21,   21
+       13,   14,   16,   19,   17,   18,   19,   18,   15,   20,
+        3,   20,   20,   20,   20,   20,   20,   20,   20,   20,
+       20,   20,   20
     } ;
 
-static const flex_int16_t yy_chk[36] =
+static const flex_int16_t yy_chk[34] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,   13,   20,   13,   19,   17,   14,    9,
-        3,   21,   21,   21,   21,   21,   21,   21,   21,   21,
-       21,   21,   21,   21,   21
+        1,    1,   13,   19,   13,   18,   16,   14,    9,    3,
+       20,   20,   20,   20,   20,   20,   20,   20,   20,   20,
+       20,   20,   20
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -449,14 +447,14 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "calc.l"
-#line 2 "calc.l"
+#line 1 "../kerwinCalculator/calc.l"
+#line 2 "../kerwinCalculator/calc.l"
     #include <stdlib.h>
     #include <string.h>
     void yyerror(char *);
-    #include "calc.tab.h"
-#line 458 "lex.yy.c"
-#line 459 "lex.yy.c"
+    #include "calc_yacc.h"
+#line 456 "../kerwinCalculator/calc_lex.c"
+#line 457 "../kerwinCalculator/calc_lex.c"
 
 #define INITIAL 0
 
@@ -673,9 +671,9 @@ YY_DECL
 		}
 
 	{
-#line 8 "calc.l"
+#line 8 "../kerwinCalculator/calc.l"
 
-#line 678 "lex.yy.c"
+#line 676 "../kerwinCalculator/calc_lex.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -702,13 +700,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 22 )
+				if ( yy_current_state >= 21 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 22 );
+		while ( yy_base[yy_current_state] != 21 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -734,76 +732,71 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 9 "calc.l"
+#line 9 "../kerwinCalculator/calc.l"
 {yylval.floatval =atof(yytext); return NUM;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 10 "calc.l"
+#line 10 "../kerwinCalculator/calc.l"
 {return OP_ADD;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 11 "calc.l"
+#line 11 "../kerwinCalculator/calc.l"
 {return OP_SUB;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 12 "calc.l"
+#line 12 "../kerwinCalculator/calc.l"
 {return OP_POW;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 13 "calc.l"
+#line 13 "../kerwinCalculator/calc.l"
 {return OP_MUL;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 14 "calc.l"
+#line 14 "../kerwinCalculator/calc.l"
 {return OP_DIV;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 15 "calc.l"
+#line 15 "../kerwinCalculator/calc.l"
 {return LEFT_BRACKET;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 16 "calc.l"
+#line 16 "../kerwinCalculator/calc.l"
 {return RIGHT_BRACKET;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 19 "calc.l"
+#line 19 "../kerwinCalculator/calc.l"
 {yylval.id=strdup(yytext);return OP_FUN;}
 	YY_BREAK
 case 10:
 /* rule 10 can match eol */
 YY_RULE_SETUP
-#line 22 "calc.l"
+#line 22 "../kerwinCalculator/calc.l"
 {return END;} /* 回车*/
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 23 "calc.l"
-{return END;}
+#line 24 "../kerwinCalculator/calc.l"
+;
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 25 "calc.l"
-;
+#line 26 "../kerwinCalculator/calc.l"
+yyerror("无效字符");
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 27 "calc.l"
-yyerror("无效字符");
-	YY_BREAK
-case 14:
-YY_RULE_SETUP
-#line 29 "calc.l"
+#line 28 "../kerwinCalculator/calc.l"
 ECHO;
 	YY_BREAK
-#line 806 "lex.yy.c"
+#line 799 "../kerwinCalculator/calc_lex.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1091,7 +1084,7 @@ static int yy_get_next_buffer (void)
 
 	for ( yy_cp = (yytext_ptr) + YY_MORE_ADJ; yy_cp < (yy_c_buf_p); ++yy_cp )
 		{
-		YY_CHAR yy_c = (*yy_cp ? yy_ec[YY_SC_TO_UI(*yy_cp)] : 13);
+		YY_CHAR yy_c = (*yy_cp ? yy_ec[YY_SC_TO_UI(*yy_cp)] : 1);
 		if ( yy_accept[yy_current_state] )
 			{
 			(yy_last_accepting_state) = yy_current_state;
@@ -1100,7 +1093,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 22 )
+			if ( yy_current_state >= 21 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1119,7 +1112,7 @@ static int yy_get_next_buffer (void)
 	int yy_is_jam;
     	char *yy_cp = (yy_c_buf_p);
 
-	YY_CHAR yy_c = 13;
+	YY_CHAR yy_c = 1;
 	if ( yy_accept[yy_current_state] )
 		{
 		(yy_last_accepting_state) = yy_current_state;
@@ -1128,11 +1121,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 22 )
+		if ( yy_current_state >= 21 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 21);
+	yy_is_jam = (yy_current_state == 20);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1808,7 +1801,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 29 "calc.l"
+#line 28 "../kerwinCalculator/calc.l"
 
 
 int yywrap(void){

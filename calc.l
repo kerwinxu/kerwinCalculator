@@ -2,7 +2,7 @@
     #include <stdlib.h>
     #include <string.h>
     void yyerror(char *);
-    #include "calc.tab.h"
+    #include "calc_yacc.h"
 %}
 
 %%
