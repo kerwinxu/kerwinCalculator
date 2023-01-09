@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <math.h>
 
 extern "C" double parse_expr(char * expr);
 
@@ -33,7 +34,17 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->btn_div, SIGNAL(clicked()), this, SLOT(input_content()));
     connect(ui->btn_add, SIGNAL(clicked()), this, SLOT(input_content()));
     connect(ui->btn_sub, SIGNAL(clicked()), this, SLOT(input_content()));
+    //
+    connect(ui->btn_sin, SIGNAL(clicked()), this, SLOT(input_content()));
+    connect(ui->btn_cos, SIGNAL(clicked()), this, SLOT(input_content()));
+    connect(ui->btn_tan, SIGNAL(clicked()), this, SLOT(input_content()));
+    connect(ui->btn_asin, SIGNAL(clicked()), this, SLOT(input_content()));
+    connect(ui->btn_acos, SIGNAL(clicked()), this, SLOT(input_content()));
+    connect(ui->btn_atan, SIGNAL(clicked()), this, SLOT(input_content()));
 
+    //
+    connect(ui->btn_PI, SIGNAL(clicked()), this, SLOT(input_content()));
+    connect(ui->btn_E, SIGNAL(clicked()), this, SLOT(input_content()));
     // 计算的
     connect(ui->btn_calu, SIGNAL(clicked()), this, SLOT(calu()));
 
@@ -61,9 +72,7 @@ void MainWindow::calu(){
     //
     double result = parse_expr(ch);
     //
-    ui->txt_result->setText(QString::number(result));
-
-
+    ui->txt_result->setText(QString::number(result, 'l', 16));
 
 
 }

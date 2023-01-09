@@ -2,8 +2,9 @@
     #include <stdio.h>
     #include <stdlib.h>
     #include <math.h>
+    #define _USE_MATH_DEFINES
     #include <string.h>
-    #define PI 3.14159265
+    //#define PI 3.14159265
     int calclex(void);
     void calcerror(char *);
 
@@ -65,15 +66,26 @@ fun:
     OP_FUN LEFT_BRACKET expr RIGHT_BRACKET {
         if (strcmp("sin", $1) == 0)
         {
-            $$=sin($3* PI / 180);
+            $$=sin($3* M_PI / 180);
         }else if (strcmp("cos", $1) == 0)
         {
-            $$=cos($3* PI / 180);
+            $$=cos($3* M_PI / 180);
         }
         else if (strcmp("tan", $1) == 0)
         {
-            $$=tan($3* PI / 180);
-        }else{
+            $$=tan($3* M_PI / 180);
+        }else if (strcmp("asin", $1) == 0)
+        {
+            $$=asin($3)/ M_PI * 180;
+        }else if (strcmp("acos", $1) == 0)
+        {
+            $$=acos($3)/ M_PI * 180;
+        }else if (strcmp("atan", $1) == 0)
+        {
+            $$=atan($3)/ M_PI * 180;
+        }
+
+        else{
             calcerror($1);
 
         }

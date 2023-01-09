@@ -15,8 +15,10 @@
 "(" {return LEFT_BRACKET;}
 ")" {return RIGHT_BRACKET;}
 
+"PI" {calclval.floatval =3.141592653589793; return NUM;}
+"E"  {calclval.floatval =2.718281828459045; return NUM;}
 
-[a-z]+ {calclval.id=strdup(calctext);return OP_FUN;}
+[a-zA-Z][a-zA-Z0-9]* {calclval.id=strdup(calctext);return OP_FUN;}
 
 
 "\n" {return END;} /* 回车*/
