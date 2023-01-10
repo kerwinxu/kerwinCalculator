@@ -54,3 +54,7 @@ flex.variable_out = SOURCES
 flex.CONFIG = target_predeps
 QMAKE_EXTRA_COMPILERS += flex
 
+# auto search dependence
+AFTER_BUILD_CMD = cd "${DESTDIR}" && windeployqt --no-opengl-sw kerwinCalculator.exe
+QMAKE_POST_LINK += $$quote($$AFTER_BUILD_CMD)
+
