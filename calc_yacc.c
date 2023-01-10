@@ -1189,9 +1189,28 @@ yyreduce:
         }else if (strcmp("acos", (yyvsp[-3].id)) == 0)
         {
             (yyval.floatval)=acos((yyvsp[-1].floatval))/ M_PI * 180;
-        }else if (strcmp("atan", (yyvsp[-3].id)) == 0)
+        }
+        else if (strcmp("atan", (yyvsp[-3].id)) == 0)
         {
             (yyval.floatval)=atan((yyvsp[-1].floatval))/ M_PI * 180;
+        }else if (strcmp("sinh", (yyvsp[-3].id)) == 0)
+        {
+            (yyval.floatval)=sinh((yyvsp[-1].floatval)* M_PI / 180);
+        }else if (strcmp("cosh", (yyvsp[-3].id)) == 0)
+        {
+            (yyval.floatval)=cosh((yyvsp[-1].floatval)* M_PI / 180);
+        }
+        else if (strcmp("tanh", (yyvsp[-3].id)) == 0)
+        {
+            (yyval.floatval)=tanh((yyvsp[-1].floatval)* M_PI / 180);
+        }
+        else if (strcmp("log10", (yyvsp[-3].id)) == 0)
+        {
+            (yyval.floatval)=log10((yyvsp[-1].floatval));
+        }
+        else if (strcmp("log", (yyvsp[-3].id)) == 0)
+        {
+            (yyval.floatval)=log((yyvsp[-1].floatval));
         }
 
         else{
@@ -1199,11 +1218,11 @@ yyreduce:
 
         }
     }
-#line 1203 "../kerwinCalculator/calc_yacc.c"
+#line 1222 "../kerwinCalculator/calc_yacc.c"
     break;
 
 
-#line 1207 "../kerwinCalculator/calc_yacc.c"
+#line 1226 "../kerwinCalculator/calc_yacc.c"
 
       default: break;
     }
@@ -1396,7 +1415,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 96 "../kerwinCalculator/calc.y"
+#line 115 "../kerwinCalculator/calc.y"
 
 
 void calcerror(char * s){

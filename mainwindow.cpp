@@ -41,6 +41,12 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->btn_asin, SIGNAL(clicked()), this, SLOT(input_content()));
     connect(ui->btn_acos, SIGNAL(clicked()), this, SLOT(input_content()));
     connect(ui->btn_atan, SIGNAL(clicked()), this, SLOT(input_content()));
+    connect(ui->btn_sinh, SIGNAL(clicked()), this, SLOT(input_content()));
+    connect(ui->btn_cosh, SIGNAL(clicked()), this, SLOT(input_content()));
+    connect(ui->btn_tanh, SIGNAL(clicked()), this, SLOT(input_content()));
+    //
+    connect(ui->btn_log10, SIGNAL(clicked()), this, SLOT(input_content()));
+    connect(ui->btn_log, SIGNAL(clicked()), this, SLOT(input_content()));
 
     //
     connect(ui->btn_PI, SIGNAL(clicked()), this, SLOT(input_content()));

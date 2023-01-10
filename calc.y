@@ -80,9 +80,28 @@ fun:
         }else if (strcmp("acos", $1) == 0)
         {
             $$=acos($3)/ M_PI * 180;
-        }else if (strcmp("atan", $1) == 0)
+        }
+        else if (strcmp("atan", $1) == 0)
         {
             $$=atan($3)/ M_PI * 180;
+        }else if (strcmp("sinh", $1) == 0)
+        {
+            $$=sinh($3* M_PI / 180);
+        }else if (strcmp("cosh", $1) == 0)
+        {
+            $$=cosh($3* M_PI / 180);
+        }
+        else if (strcmp("tanh", $1) == 0)
+        {
+            $$=tanh($3* M_PI / 180);
+        }
+        else if (strcmp("log10", $1) == 0)
+        {
+            $$=log10($3);
+        }
+        else if (strcmp("log", $1) == 0)
+        {
+            $$=log($3);
         }
 
         else{
